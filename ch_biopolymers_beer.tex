@@ -1,0 +1,390 @@
+%% Dieser Quelltext ist in der Kodierung UTF-8 zu speichern und mit lualatex
+%% zu kompilieren.
+
+% !TeX program = lualatex
+
+\documentclass{scrartcl}  % KOMA-Scritp equivalent to \documentclass{article}
+% \documentclass[12pt,a4paper]{article}
+% \usepackage[utf8]{inputenc}
+% TODO: fix \setdefaultlanguage problem while compiling
+% \setdefaultlanguage[spelling=new, babelshorthands=true]{german}  
+\usepackage{polyglossia}  % for LuaLatex
+\usepackage{fontspec}  % for LuaLatex
+\usepackage{luacode}  % for LuaLatex
+\renewcommand{\familydefault}{\sfdefault}  % change serif (default-value) to SansSerif version of LaTex-font
+\usepackage{amsmath}  % recommended as an adjunct to serious mathematical typesetting
+\usepackage{amsfonts}  % extended set of fonts for use in mathematics
+\usepackage{amssymb}  % allows the use of various special characters and symbols
+\usepackage{graphicx}  % providing interface for optional arguments to the \includegraphics command
+\usepackage{array}  % extended implementation of the array and tabular environments
+\usepackage{xcolor}  % to use broader color plate
+\usepackage{hyperref} % to create hypertext links in PDF (jump from content overview to according pages)
+\usepackage{enumitem} % for enumerate with letters
+\usepackage{textcomp} % for copyright symbol
+\usepackage{tcolorbox} % for making boxes around stuff
+\usepackage{wrapfig}  % to wrap images and text
+\usepackage{lipsum}  % generates filler text
+\usepackage{pdflscape}  % for using landscape format in between
+\usepackage{smartdiagram}  % to create cooler diagrams
+% TODO: TODO: generates clash with \xcolor package..fix later
+% \usepackage[table]{xcolor}  % for coloring rows in tables, 
+\usepackage{floatrow}  % provides many ways to customize layouts of floating environments
+\usepackage{caption}  % for more formating options for captions
+\usepackage{gensymb}  % to use symbols
+\usepackage{siunitx}  % to use symbols and units
+\usepackage[scale=1.5]{ccicons}  % for Creative Commons icons
+
+% needed for chemistry notations
+\usepackage{chemmacros}  % used for chemistry stuff
+\usepackage{chemfig}  % used for chemistry stuff
+\usepackage[version=4]{mhchem}   % used for chemistry stuff
+
+\tcbuselibrary{skins}  % for textcolorbox
+
+% page layout for worksheets
+\usepackage[left=1.50cm, right=1.50cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage[headsepline,footsepline]{scrlayer-scrpage}
+%scrpage2
+\pagestyle{scrheadings}
+
+% this luacode has no function, except to make sure the document is compiled using LuaLaTex
+\begin{luacode*}
+	--[[
+		print("this is just a comment")
+	--]]
+\end{luacode*}
+
+
+% Information for Header and Footer
+% *********************************
+
+\ihead{\textsf{Chemie}}
+\chead{\textbf{\textsf{Biopolymere}}}
+\ohead{\textsf{2020}}
+% \ohead{90min}
+% \ifoot{Fußzeile innen}
+\cfoot{\textsf{\pagemark}}
+%\ofoot{Fußzeile außen}
+
+
+\author{Jonas Pews}
+\title{Biopolymere - Ein Skript zum selbstständigen Lernen am Kontext Bier}
+\date{\today}
+
+% Some Info about this document
+% *****************************
+%
+% TODO: write Text how this doc can be used in school. also about RLP Brandenburg/Berlin
+
+% TODO: write more comments to explain/comment :-) the Tex-Code 
+
+% Info for tabing in tex file
+% ***************************
+% section is one tab
+% subsection is two tab
+% pagebreak/layout changes (landscape) always no tab
+
+\begin{document}
+
+	\maketitle
+	
+	\begin{center}
+		\ccbyncsa
+	\end{center}
+	
+
+\pagebreak
+
+	% TODO: soll auf Deutsch "Inhaltsverzeichnis dastehen
+	\tableofcontents
+
+\pagebreak
+
+	\section{Einführung}
+
+		Mit Hilfe dieses Skriptes sollen Sie sich das Thema Biopolymere selbstständig erarbeiten. Selbstständig bedeutet wirklich SELBST und STÄNDIG. Der Unterricht im klassischen Sinne hat aufgehört. Sie können Ihr eigenes Tempo bestimmen und sich Ihre eigenen Partner suchen. Sollte die Lehrkraft nicht da sein, haben Sie nun immer das Material um selbstständig zu arbeiten.
+		Die Lehrkraft soll Ihnen dabei als Berater zur Seite stehen. Wenn Sie Fragen haben oder auf Probleme stoßen, die Sie weder allein noch im Team lösen konnten, dann fragen Sie nach! \newline
+		Für jedes Kapitel dieser Reihe ist angegeben, wie Sie vorgehen sollten. Die Vorüberlegungen sollen Ihnen helfen Wissen zu reaktivieren oder Wissenslücken zu schließen. Wenn Sie sich an die vorgegebenen Vorgehensweisen hallten, sollte es keine Probleme geben.
+		Vielleicht fragen Sie sich jetzt, warum die Lehrer so faul sein dürfen und Sie jetzt alles allein machen müssen. Der Grund ist recht einfach: die Lehrer haben alles bereits so vorbereitet, dass Sie sich intensiv mit einem Thema beschäftigen können. Dadurch bleibt es besser in Ihrem Gedächtnis. Sie lernen effektiver die Inhalte, verbessern Ihr eigenes Zeitmanagement und analysieren Ihre eigenen Fähig- und Fertigkeiten. \newline
+
+		\subsection{Symbole im Skript}
+
+			% TODO: change size of symbols
+
+			\begin{tcolorbox}[enhanced,
+				colback=white,
+				colframe=darkgray,
+				fonttitle=\sffamily\bfseries\large, 
+				title=Informationstexte,  % search keyword::Informationstexte 
+				attach boxed title to top left={xshift=3.2mm,yshift=-0.50mm},
+				boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=darkgray,height=0.75cm},
+				colbacktitle=darkgray,
+				drop lifted shadow]
+				\begin{wrapfigure}{L}{0.15\textwidth}  
+					\centering
+					\vspace{-14pt}  % to align image with first line of text
+					\includegraphics[width=0.9\textwidth]{symbols/symbol_tex_content}
+				\end{wrapfigure}
+				
+				In diesen Texten findest du Erklärungen und Hintergründe! \newline 
+				Die Quellen findest du in den Fußnoten. Diese Quellen können dir auch als Quizvorbereitung helfen. Übrigens, nicht alle Quellen sind Wikipedia. Aber es ist eine nützliche – und in Chemie akzeptierte Quelle. 
+				\vspace{0.7cm}  % to fill empty space in tcolorbox
+			\end{tcolorbox}
+
+			\begin{tcolorbox}[enhanced,
+				colback=white,
+				colframe=orange!60!red,
+				fonttitle=\sffamily\bfseries\large, 
+				title=Wiederholung,  % search keyword::Wiederholung
+				attach boxed title to top left={xshift=3.2mm,yshift=-0.50mm},
+				boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=orange!60!red,height=0.75cm},
+				colbacktitle=orange!60!red,
+				% sharp corners,
+				drop lifted shadow]	
+				\begin{wrapfigure}{L}{0.15\textwidth}  
+					\centering
+					\vspace{-14pt}  % to align image with first line of text
+					\includegraphics[width=0.9\textwidth]{symbols/symbol_tex_review}
+				\end{wrapfigure}
+				
+				An diesen Stellen sollst du dein Wissen auffrischen! \newline 
+				Du solltest die entsprechenden Themen schon vorher im (Chemie-)Unterricht behandelt haben. Falls nicht, arbeite deine Wissenslücken bitte selbstständig auf. 
+				
+			\end{tcolorbox}
+			
+			
+			\begin{tcolorbox}[enhanced,
+				colback=white,
+				colframe=black,
+				fonttitle=\sffamily\bfseries\large, 
+				title=Internet-Quelle (URL),  % search keyword::URL
+				attach boxed title to top left={xshift=3.2mm,yshift=-0.50mm},
+				boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=black,height=0.75cm},
+				colbacktitle=black,
+				drop lifted shadow]
+				\begin{wrapfigure}{L}{0.15\textwidth}  
+					\centering
+					\vspace{-14pt}  % to align image with first line of text
+					\includegraphics[width=0.9\textwidth]{symbols/symbol_tex_qrcode}
+				\end{wrapfigure}
+				
+				Manche Online-Quellen haben nicht ins Skript gepasst. Daher kannst du mit einem Handy diese QR-Codes einlesen und so die Weblinks (URLs) öffnen. 
+				\vspace{1.5cm}  % to fill empty space in tcolorbox
+			\end{tcolorbox}
+			
+			\begin{tcolorbox}[enhanced,
+				colback=white,
+				colframe=green!30!black,
+				fonttitle=\sffamily\bfseries\large, 
+				title=Durchführung,  % search keyword::Durchführung
+				attach boxed title to top left={xshift=3.2mm,yshift=-0.50mm},
+				boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=green!50!black,height=0.75cm},
+				colbacktitle=green!50!black,
+				drop lifted shadow]
+				\begin{wrapfigure}{L}{0.15\textwidth}  
+					\centering
+					\vspace{-14pt}  % to align image with first line of text
+					\includegraphics[width=0.9\textwidth]{symbols/symbol_tex_method}
+				\end{wrapfigure}
+				
+				Dieses Symbol weißt immer auf eine Durchführung für ein Experiment hin. 
+				\vspace{2.3cm}  % to fill empty space in tcolorbox
+			\end{tcolorbox}
+			
+			\begin{tcolorbox}[enhanced,
+				colback=white,
+				colframe=red,
+				fonttitle=\sffamily\bfseries\large, 
+				title=Für schnelle Schüler\_innen,  % search keyword::schnelle_Schüler
+				attach boxed title to top left={xshift=3.2mm,yshift=-0.40mm},
+				boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=red,height=0.75cm},
+				colbacktitle=red,
+				drop lifted shadow]
+				\begin{wrapfigure}{L}{0.15\textwidth}  
+					\centering
+					\vspace{-14pt}  % to align image with first line of text
+					\includegraphics[width=0.8\textwidth]{symbols/symbol_tex_faststudents}
+				\end{wrapfigure}
+				
+				Es soll keine Langeweile aufkommen. Wenn du mit Aufträgen bereits fertig bist, während deine Gruppe noch arbeitet, kannst du dich hier noch weiter in das Thema vertiefen. 
+				\vspace{1.2cm}  % to fill empty space in tcolorbox
+			\end{tcolorbox}
+			
+			\begin{tcolorbox}
+				[enhanced,
+				colback=white,
+				colframe=black,
+				fonttitle=\sffamily\bfseries\large, 
+				title=Zeit,  % search keyword::Zeit
+				attach boxed title to top left={xshift=3.2mm,yshift=-0.40mm},
+				boxed title style={skin=enhancedfirst
+					jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=black,height=0.75cm},
+				colbacktitle=black,
+				drop lifted shadow]
+				\begin{wrapfigure}{L}{0.15\textwidth}
+					\centering
+					\vspace{-14pt}  % to align image with first line of text
+					\includegraphics[width=0.7\textwidth]{symbols/symbol_tex_time}
+				\end{wrapfigure}
+				
+				Das Zeitsymbol soll dir zeigen, wie lange du für das jeweilige Kapitel brauchen solltest. Diese Zeitangabe dient aber nur als Orientierung. Am Ende musst du nur die Planung deiner Lehrkraft und deine eigene Zeitplanung beachten. 
+				\vspace{1.0cm}  % to fill empty space in tcolorbox
+			\end{tcolorbox}
+				
+				
+		\subsection*{Bewertung}
+			
+			Das Thema Biolpolymere wird uns das ganze Semester beschäftigen. In dieser Zeit müssen Sie folgende Leistungen erbringen:
+			
+			\begin{enumerate}
+				\item \textbf{Ausführliche Protokolle}
+				\item Zwei \textbf{Tests}
+				\item \textbf{Klausur oder Stundenarbeit zur Klausur}
+				\item \textbf{Portfolio}
+				\item (Mündliche) \textbf{Mitarbeit} in Plenumsphasen.
+			\end{enumerate}
+						
+			\subsubsection*{Das Portfolio}
+			
+				Das Portfolio ist ein Teil der Arbeit und Bewertung. Zum einen dient es der Sicherung und Sammlung aller Arbeitsergebnisse. Sie können und sollten in diesem Portfolio alles sammeln, was Sie an Materialien und Produkten selbst erarbeitetet haben. 
+				Die zweite Funktion des Portfolios ist die Darstellung Ihrer eigenen Entwicklung. Mit Hilfe des Portfolios belegen Sie Ihren Lernfortschritt und reflektieren Ihre Arbeitsergebnisse und  Arbeitsweisen. Diese Reflexion sollte sich  auf alle Arbeitsprozesse, wie z.B. Recherchen oder Gruppenarbeiten, beziehen. Die Selbstreflexion sollte unabhängig von den Arbeitsaufträgen der Lehrkraft erfolgen. \newline
+				Darüber hinaus können Sie dieses Portfolio auch als Teil Ihrer zukünftigen Bewerbungsmappen nutzen. Ihr zukünftiger Arbeitgeber erlangt dadurch ein umfassenderes Bild von Ihnen. Sehen Sie das Portfolio also nicht nur als weiteren Schulhefter sondern auch als Selbstdarstellungsmöglichkeit. \newline
+				Die Bewertung des Portfolios erfolgt zum Ende des jeweiligen Semesters und erfolgt mit Hilfe des gegebenen Bewertungsrasters.
+						 
+					
+			\subsubsection*{Hilfreiche Fragen für die Reflexion}
+					
+				\begin{center}
+					\smartdiagramset{
+						planet size=3cm, 
+						distance planet-text=0.1,
+						distance planet-satellite=5.5cm,
+						% /tikz/connection planet satellite/.append style={<-}
+					} 
+					\smartdiagram[constellation diagram]{Reflexion, {Habe ich die Zeit effektiv genutzt?}, {Habe ich alle Aufträge gelöst?}, {Habe ich alles verstanden?},  {Habe ich gut allein gearbeitet?}, {Habe ich gut in der Gruppe gearbeitet?}, {Was kann ich in der nächsten Stunde besser machen?}}
+				\end{center}
+						
+					
+\newpage
+					
+\begin{landscape}
+						
+			\subsubsection*{Bewertungsraster für das Portfolio}
+				
+				Die Bewertung des Portfolios erfolgt zum Ende des Halbjahres und mit Hilfe dieses Bewertungsrasters. \newline
+						
+				\begin{tabular}{|l|*{4}{p{4.5cm}|}}  % da alle Spalten gleich sein sollen: Sternoperator {*{Anzahl n}{Spaltentyp}}
+					\hline
+					% *** 1. Zeile **************************************************
+					\textbf{Kriterium} &
+					\textbf{1BE} &
+					\textbf{2BE} &
+					\textbf{3BE} &
+					\textbf{4BE} \\
+					\hline
+					% *** 2. Zeile **************************************************
+					\multicolumn{5}{c}{\textbf{Umsetzung Portfolio - Notenpunkte}} \\
+					\hline
+					% *** 3. Zeile **************************************************
+					\textbf{Umsetzung} &
+					Analoge Version mit kreativem Aufwand (max.12NP) &
+					Als TiddlyWiki kreativ umgesetzt (max.13NP) &
+					Mit HTML einfach umgesetzt (max.14NP) &
+					Mit HTML (und CSS) kreativ umgesetzt (max.15NP) \\
+					\hline
+					% *** 7. Zeile **************************************************
+					\multicolumn{5}{c}{\textbf{Inhaltliche Kriterien (Gewichtung 2)}} \\
+					\hline
+					% *** 8. Zeile **************************************************
+					\textbf{Dokumentation} &
+					Weniger als zur Hälfte erfüllt &
+					Mehr als zur Hälfte erfüllt &
+					Weitgehend erfüllt &
+					Vollständig erfüllt \\
+					\hline
+					% *** 9. Zeile **************************************************
+					\multicolumn{5}{c}{\textbf{Reflexion der Arbeit und des Erkenntnisgewinns (Gewichtung 3)}} \\
+					\hline
+					% *** 10. Zeile **************************************************
+					\textbf{Reflexion} &
+					Kaum Reflexionsfähigkeit erkennbar &
+					Reflexionsfähigkeit zum Teil erkennbar &
+					Gute Reflexionsfähigkeit erkennbar &
+					Sehr gute Reflexionsfähigkeit erkennbar \\
+					\hline
+				\end{tabular} \newline
+					
+				\vspace{1cm}
+				
+				\noindent Die \textit{Dokumentation} der Arbeit enthält z.B. die Lösungen zu den Arbeitsaufträgen, weitere Mitschriften, Quellen, Recherchen, Bilder, Mind-Maps, Videos etc. \newline
+				Die durchgängige \textit{Reflexion} beinhaltet die Arbeit im Kurs, in der Gruppe, Einzelarbeit, die Reflexion des Erkenntnisstands etc.
+						
+\end{landscape}
+			
+			%TODO: Text zur Bewertung und genauen Arbeitsweise einfügen!
+			
+\newpage
+
+	\section{Der Bierbrauprozess}
+
+		\textit{Bierbrauen ist eine lebensmitteltechnischer Prozess, den die Menschheit schon seit Jahrtausenden überall auf der Welt praktiziert. Im Vergleich zur Weinherstellung benötigt man einige Arbeitsschritte mehr. Wie kann man also Bier herstellen? Benötigt man dazu immer eine große Brauerei? Kann man das auch in der Schule oder zu Hause machen?} \newline
+		
+		\begin{minipage}{0.7\textwidth}
+			\noindent \textbf{Am Ende dieses Kapitels sollen Sie ... :}
+			\begin{enumerate}
+				\item ... beschreiben können, wie die natürliche herstellung von Ethanol funktioniert.
+				\item ... die Reaktionsgleichung für die alkoholische Gärung aufstellen können.
+				\item ... die Funktionsweise eines (Bio-)katalysators erklären können.
+			\end{enumerate}
+			\textbf{Vorgehensweise:}
+			\begin{enumerate}
+				\item Arbeite in Gruppen von 4-5 SuS.
+				\item Führt das Experiment durch.
+				\item Bearbeite anschließend die restlichen Arbeitsaufträge.
+				\item Nachdem du den Arbeitsabschnitt erledigt hast, tausche dich mit einigen MitschülerInnen aus. 
+			\end{enumerate}
+			
+		\end{minipage}
+		\hspace{0.1\textwidth}
+		\begin{minipage}{0.2\textwidth}
+			\begin{tcolorbox}
+				[enhanced,
+				width=0.9\textwidth,
+				colback=white,
+				colframe=black,
+				fonttitle=\sffamily\bfseries\large, 
+				title=Zeit,  % search keyword::Zeit
+				attach boxed title to top center={xshift=-0.0mm,yshift=-0.50mm},
+				boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=black,height=0.75cm},
+				colbacktitle=black,
+				drop lifted shadow]
+				\centering
+				\includegraphics[width=0.9\textwidth]{symbols/symbol_tex_time}
+				
+				\begin{center}
+					\textbf{180min}
+				\end{center}
+			\end{tcolorbox}
+		\end{minipage}
+		
+		\begin{center}
+			\noindent\rule{18cm}{0.1pt}
+		\end{center}
+			
+\newpage
+			\subsection{Die alkoholische Gärung}
+			
+			Bierbrauen ist eine lebensmitteltechnischer Prozess, den die Menschheit schon seit Jahrtausenden überall auf der Welt praktiziert. Im Vergleich zur Weinherstellung benötigt man einige Arbeitsschritte mehr. Wie kann man also Bier herstellen? Benötigt man dazu immer eine große Brauerei? Kann man das auch in der Schule oder zu Hause machen? 
+			
+				\textbf{Auftrag: Plane ein Experiment, bei dem du Ethanol (dt. Trinkalkohol) herstellst.}
+				\begin{enumerate}
+					\item \textbf{Recherchiere}, wie man Ethanol mit Hilfe der alkoholischen Gärung herstellen kann.
+					\item Erstelle eine Durchführung und Materialliste (Geräte und Chemikalien) für das Experiment. Begründe deine Planung und Materialliste! 
+					\item \textbf{Visualisiere} deine Durchführung! Hilfe und Inspiration findest du (notfalls) auf dem Lehrertisch.
+					\item Führe das \textbf{Experiment} durch und schreibe ein kurzes \textbf{Protokoll}! Kennzeichne deinen Versuch, da er einige Zeit stehen bleiben muss.
+				\end{enumerate}
+
+
+			
+\end{document}
+
