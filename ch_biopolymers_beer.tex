@@ -95,7 +95,7 @@
 
 \pagebreak
 
-	% TODO: soll auf Deutsch "Inhaltsverzeichnis dastehen
+	\renewcommand{\contentsname}{Inhaltsverzeichnis}  % instead of "Contents" it should say "Inhaltsverzeichnis"
 	\tableofcontents
 
 \pagebreak
@@ -1986,5 +1986,212 @@
 
 \newpage
 	\part{Der Aufbau der Polypeptide (Eiweiße)}
+	
+	\section{Die Struktur der Aminosäure}
+	
+		\textit{Nachdem Sie nun die Grundbausteine der Saccharide ausführlich bearbeitet haben, sollen Sie sich nun mit den Grundbausteinen der zweiten wichtigen Gruppe der Bio-Polymere beschäftigen. Wie sind die Proteine nun genau aufgebaut? Welche Grundbausteine gibt es? Wie sind sie verbunden? Und welche Eigenschaften ergeben sich daraus?} \newline
+	
+		\begin{minipage}{0.7\textwidth}
+			% *******************************
+			% Übersicht Lernziele // Overview  
+			% *******************************
+			\noindent \textbf{Am Ende dieses Kapitels sollen Sie ... :}
+			\begin{enumerate}
+				\item ... die grundlegende Struktur der Aminosäuren experimentell erarbeitet haben.
+			\end{enumerate}
+			% *************************************************
+			% empfohlene Vorgehensweise // recommended approach  
+			% *************************************************
+			% Lernende können selbst entscheiden, wie sie sich durch das Kapitel arbeiten
+			% Lehrpersonen/Lernende können folgende Empfehlung aber nutzen
+			\textbf{Vorgehensweise:}
+			\begin{enumerate}
+				\item Bearbeiten Sie die Aufgaben in den Vorüberlegungen!
+				\item Führen Sie die Experimente in kleinen Gruppen durch.
+				\item Bearbeiten Sie alle Arbeitsaufträge.
+			\end{enumerate}
+			
+		\end{minipage}
+		\hspace{0.1\textwidth}
+		% ***********************************
+		% empfohlene Zeit // recommended time  
+		% ***********************************
+		% zeitliche Orientierung für Lernende und Lehrpersonen
+		% Zeit sollte aber ungefährt eingehalten werden, damit Reihenplanung funktioniert
+		\begin{minipage}{0.2\textwidth}
+			\begin{tcolorbox}
+				[enhanced,
+				width=0.9\textwidth,
+				colback=white,
+				colframe=black,
+				fonttitle=\sffamily\bfseries\large, 
+				title=Zeit,  % search keyword::Zeit
+				attach boxed title to top center={xshift=-0.0mm,yshift=-0.50mm},
+				boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=black,height=0.75cm},
+				colbacktitle=black,
+				drop lifted shadow]
+				\centering
+				\includegraphics[width=0.9\textwidth]{symbols/symbol_tex_time}
+				
+				\begin{center}
+					\textbf{90min} % Zeitangabe für Lernende // study time for students 
+				\end{center}
+			\end{tcolorbox}
+		\end{minipage}
+
+\vspace{0.3cm}
+		% *********************************************
+		% empfohlene Wiederholung // recommended review  
+		% *********************************************
+		\begin{tcolorbox}[enhanced,
+			colback=white,
+			colframe=orange!60!red,
+			fonttitle=\sffamily\bfseries\large, 
+			title=Vorüberlegung,  % search keyword::Wiederholung
+			attach boxed title to top left={xshift=3.2mm,yshift=-0.50mm},
+			boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=orange!60!red,height=0.75cm},
+			colbacktitle=orange!60!red,
+			% sharp corners,
+			drop lifted shadow]	
+			\begin{wrapfigure}{L}{0.15\textwidth}  
+				\centering
+				\vspace{-14pt}  % to align image with first line of text
+				\includegraphics[width=0.9\textwidth]{symbols/symbol_tex_review}
+			\end{wrapfigure}
+			
+			\textbf{Beschreiben} Sie Experimente, mit denen Sie Wasser und Kohlenstoffdioxid nachweisen können. \newline
+			
+		\end{tcolorbox}
+		% Layout: Linie zum Abgrenzen
+		\begin{center}
+			\noindent\rule{18cm}{0.1pt}
+		\end{center}
+	% *********************************************
+	% Ende Kapitelübersicht // End Chapter Overview
+	% *********************************************				
+
+\newpage
+	
+		\subsection{Elementaranalyse von Glycin}
+		
+			\textbf{Auftrag: Ermitteln Sie experimentell die Elemente aus denen sich die Aminosäure Glycin zusammensetzt.}
+			
+			\begin{enumerate}
+				\item Schreiben Sie ein \textbf{Protokoll}.
+	    		\item Erstellen Sie eine \textbf{Arbeitshypothese} zu den enthaltenen Elementen, basierend auf Ihrem Vorwissen. \textbf{Begründen} Sie kurz.
+	    		\item \textbf{Recherchieren} Sie zielführende Durchführungen für die Nachweise. Nutzen Sie gegebenenfalls die Hilfen der Lehrkraft. (Achtung: Falls Sie Watesmo-Papier nutzen sollen, müssen Sie auf weißes Kupfersulfat ausweichen. Dies können Sie durch die Erhitzung von blauem Kupfersulfat herstellen.)
+	    		\item Für ihre \textbf{Auswertung}:
+	        	\begin{itemize}
+	        		\item Werten Sie ihre Beobachtungen detailliert aus. Bewerten Sie ihre Hypothese und erstellen Sie eine Fehlerbetrachtung. 
+	        		\item Nutzen Sie in der Auswertung die korrekten chemischen Formeln sowie Wort- und Formelgleichungen (bei den Nachweisen).
+	        		\item Recherchieren Sie die Strukturformel vom Glycin.
+	        		\item Erklären Sie, welches Element nicht in der Elementaranalyse nachgewiesen wurde. Recherchieren Sie Nachweismöglichkeiten.
+	        		\item Nennen Sie Beispiele für weitere Aminosäuren und deren Bedeutung.
+				\end{itemize}
+			\end{enumerate}
+
+\newpage
+	\section{Die Eigenschaften der Aminosäure}
+	
+		\textit{Ähnlich wie bei den Monosacchariden gibt es auch bei den Aminosäuren mehrere Vertreter. Die wichtigsten sollen Sie in diesem Kapitel kennenlernen. Dabei ist es wichtig eine Einteilung der Aminosäuren vorzunehmen.} \newline
+	
+		\begin{minipage}{0.7\textwidth}
+			% *******************************
+			% Übersicht Lernziele // Overview  
+			% *******************************
+			\noindent \textbf{Am Ende dieses Kapitels sollen Sie ... :}
+			\begin{enumerate}
+				\item ... die zwanzig wichtigsten Aminosäuren bzgl. ihrer Eigenschaften analysieren und einteilen können.
+			\end{enumerate}
+			% *************************************************
+			% empfohlene Vorgehensweise // recommended approach  
+			% *************************************************
+			% Lernende können selbst entscheiden, wie sie sich durch das Kapitel arbeiten
+			% Lehrpersonen/Lernende können folgende Empfehlung aber nutzen
+			\textbf{Vorgehensweise:}
+			\begin{enumerate}
+				\item Bearbeiten Sie die Aufgaben erst einmal allein.
+				\item Vergleichen Sie ihre Ergebnisse in der Gruppe.
+				\item Bearbeiten Sie alle Arbeitsaufträge.
+			\end{enumerate}
+			
+		\end{minipage}
+		\hspace{0.1\textwidth}
+		% ***********************************
+		% empfohlene Zeit // recommended time  
+		% ***********************************
+		% zeitliche Orientierung für Lernende und Lehrpersonen
+		% Zeit sollte aber ungefährt eingehalten werden, damit Reihenplanung funktioniert
+		\begin{minipage}{0.2\textwidth}
+			\begin{tcolorbox}
+				[enhanced,
+				width=0.9\textwidth,
+				colback=white,
+				colframe=black,
+				fonttitle=\sffamily\bfseries\large, 
+				title=Zeit,  % search keyword::Zeit
+				attach boxed title to top center={xshift=-0.0mm,yshift=-0.50mm},
+				boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=black,height=0.75cm},
+				colbacktitle=black,
+				drop lifted shadow]
+				\centering
+				\includegraphics[width=0.9\textwidth]{symbols/symbol_tex_time}
+				
+				\begin{center}
+					\textbf{45min} % Zeitangabe für Lernende // study time for students 
+				\end{center}
+			\end{tcolorbox}
+		\end{minipage}
+
+\vspace{0.3cm}
+		% *********************************************
+		% empfohlene Wiederholung // recommended review  
+		% *********************************************
+		\begin{tcolorbox}[enhanced,
+			colback=white,
+			colframe=orange!60!red,
+			fonttitle=\sffamily\bfseries\large, 
+			title=Vorüberlegung,  % search keyword::Wiederholung
+			attach boxed title to top left={xshift=3.2mm,yshift=-0.50mm},
+			boxed title style={skin=enhancedfirst jigsaw,size=small,arc=1mm,bottom=-1mm,colframe=orange!60!red,height=0.75cm},
+			colbacktitle=orange!60!red,
+			% sharp corners,
+			drop lifted shadow]	
+			\begin{wrapfigure}{L}{0.15\textwidth}  
+				\centering
+				\vspace{-14pt}  % to align image with first line of text
+				\includegraphics[width=0.9\textwidth]{symbols/symbol_tex_review}
+			\end{wrapfigure}
+			
+			    \textbf{Wiederholen Sie die folgenden chemischen Basiskonzepte:} \newline
+			    $\bullet$ sauer und basisch \newline
+			    $\bullet$ polar und unpolar
+			
+		\end{tcolorbox}
+		% Layout: Linie zum Abgrenzen
+		\begin{center}
+			\noindent\rule{18cm}{0.1pt}
+		\end{center}
+	% *********************************************
+	% Ende Kapitelübersicht // End Chapter Overview
+	% *********************************************				
+
+\newpage
+		\subsection{Einteilung der Aminosäuren aufgrund spezifischer Eigenschaften}
+		
+			\textbf{Auftrag: Sortieren Sie die 20 Aminosäuren!}
+			\begin{enumerate}
+				\item Nutzen Sie die folgenden Kategorien: polar, unpolar, sauer und basisch.
+			    \item \textbf{Erläutern} Sie die Eigenschaften anhand selbstgewählter Aminosäuren. Recherchieren Sie gegebenenfalls in der Literatur oder online.
+			    \item \textbf{Bewerten} Sie die folgende Aussage: „Alle Aminosäuren sind optisch aktiv!“
+			    \item \textbf{Erläutern} Sie, warum es sich bei Aminosäuren um Ampholyte handelt.
+			    \item \textbf{Erklären} Sie die biologische Bedeutung der Aminosäuren für den Menschen.
+			    \item \textbf{Erklären} Sie was essentielle Aminosäuren sind.
+			\end{enumerate} 
+			
+			\begin{center}
+				\includegraphics{images/table_aminoacids}
+			\end{center}
+			
 \end{document}
 
