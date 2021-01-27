@@ -1,0 +1,9 @@
+# files which can be ignored, which are generated during LaTex-compiling
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# folders which can be ignored, images due to licencing reasons
+/images
